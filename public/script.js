@@ -1,8 +1,20 @@
 const socket = new WebSocket('ws://localhost:5500');
 
-const username = localStorage.getItem('username') || prompt('What do you want your username to be?') || 'anonymous'
+/* const username = localStorage.getItem('username') || prompt('What do you want your username to be?') || 'anonymous'
 
 localStorage.setItem('username', username)
+ */
+const username = localStorage.getItem('username');
+
+console.log('Existing username from localStorage:', username);
+
+
+  const newUsername = prompt('What do you want your username to be?') || 'anonymous';
+  console.log('Chosen username:', newUsername);
+  localStorage.setItem('username', newUsername);
+
+
+
 
 socket.addEventListener('open', connectionOpen)
 socket.addEventListener('message', handleSocketMessage)
