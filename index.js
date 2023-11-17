@@ -26,6 +26,7 @@ wss.on('connection', function connection(ws) {
                 }
             }
         } catch (error) {
+            console.log(error);
             // Handle parsing errors here
         }
     });
